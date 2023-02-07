@@ -101,6 +101,7 @@ def output_contigs(vertices, edges):
             current = next.label
             V[current].indegree -= 1
         contigs.append(contig)
+    
     return contigs
 
 def find_contigs(contigs, reads):

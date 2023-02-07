@@ -76,4 +76,6 @@ def test():
     return dbg.visualize_debruijn(Vertices, Edges)
 
 if __name__ == '__main__':
-    test()
+    # test()
+    reads =dbg.read_fasta('T_c_100k_100.fasta') 
+    print(len(reads))

@@ -92,7 +92,7 @@ def test_kmer(minK: int, maxK: int, reads:list):
 
     return contigs, vertices, edges, bestK
 
-def visualize_debruijn(Veritces, Edges, view: bool, file_name = 'DBG', dir = 'doctest-output'):
+def visualize_debruijn(Veritces, Edges, view: bool, file_name = 'DBG', dir = 'dbg_output'):
     dot = graphviz.Digraph(file_name, comment='DBG', engine='sfdp', node_attr={'color': 'lightblue2', 'style': 'filled', 'width':'0.5', 'shape':'point'})
     dot.attr(overlap='false', beautify='true', bgcolor='black')
     dot.edge_attr.update(arrowsize='1.5', color='white')

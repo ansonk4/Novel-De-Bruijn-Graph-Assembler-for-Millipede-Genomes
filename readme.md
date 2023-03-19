@@ -27,6 +27,8 @@ Input max kmer (e.g. 40): 40
 Input the number of genome to read (e.g. 1000): 1000
 ```
 
+The above input means the program performs genome assembly on the first 1000 genome of TC 100k.fasta, and tests the kmer size from 10 to 40.
+
 5.  The resultant genome and dbg is stored in `dbg_output/`
 
 ## DBG with clustering

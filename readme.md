@@ -1,6 +1,6 @@
 # Novel De Bruijn Graph Assembler for Millipede Genomes
 
-This repository is the code for the Novel De Bruijn Graph Assembler for Millipede Genomes project - CUHK Library Data Analytics Practice Opportunity 2022/23
+This repository is developed for [Novel De Bruijn Graph Assembler for Millipede Genomes - CUHK Library Data Analytics Practice Opportunity 2022/23](https://dsprojects.lib.cuhk.edu.hk/en/projects/dbg-genome/home/?edit&language=en)
 
 ## DBG without clustering
 1. Clone this repository
@@ -68,3 +68,6 @@ Input the number of genome to read (e.g. 1000): 1000
 ```
 
 7. The resultant genome and dbg is stored in `dbg_output/`
+
+## Test case
+`T_c_100k.fasta` and `T_c_1000_filter_CDH_80%.clstr` are provided for testing purposes. They are obtained from `Trigoniulus_corallinus_genomic.fastq`. For more info, please go to [Novel De Bruijn Graph Assembler for Millipede Genomes - CUHK Library Data Analytics Practice Opportunity 2022/23](https://dsprojects.lib.cuhk.edu.hk/en/projects/dbg-genome/home/?edit&language=en)

@@ -1,4 +1,5 @@
 .DS_Store
+
 *.fasta
 *.clstr
-dbg-output
+dbg-output/

@@ -24,8 +24,6 @@ def old_testing_kmer_size(minK: int, maxK: int, reads: list):
 
     print('Second test')
     for i in range(minK, maxK):
-        if i == bestK:
-            continue
         contigs, vertices, edges, k = dbg.assembly(reads, k=i)
         print(f"K: {i} length: {len(contigs)}")
         if len(contigs) > max_length:
@@ -35,8 +33,8 @@ def old_testing_kmer_size(minK: int, maxK: int, reads: list):
             Edges = edges
             bestK = i
 
-    print(f'Time: {time.time() - start}s')
     print(f"Best Kmer size: {bestK}")
+    print(f'Time: {time.time() - start}s')
 
     return Contigs, Vertices, Edges
 
@@ -51,7 +49,7 @@ def st_read_fasta(fasta):
             reads.append(seq)
             i += 1
             seq = ""
-            if i >= 100:
+            if i >= 300:
                 break
     
     reads.pop(0)
@@ -71,11 +69,8 @@ def test():
 
     reads = dbg.read_fasta('T_c_100k.fasta')
     Contigs, Vertices, Edges = old_testing_kmer_size(10, 40, reads)
-    print(f"Final Contigs: {Contigs}") 
-
-    return dbg.visualize_debruijn(Vertices, Edges)
+    # print(f"Final Contigs: {Contigs}") 
+    # return dbg.visualize_debruijn(Vertices, Edges)
 
 if __name__ == '__main__':
-    # test()
-    reads =dbg.read_fasta('T_c_100k_100.fasta') 
-    print(len(reads))
+    test()

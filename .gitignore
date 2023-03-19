@@ -1,0 +1,8 @@
+*.fasta
+*.clstr
+dbg_ult.py
+
+last_year/
+doctest-output/
+__pycache__/
+result/

@@ -8,8 +8,7 @@ import time
     3. output fasta for all contigs'''
 
 def read_clstr():
-    with open("T_c_100k_100.clstr", "r") as fcd:
-    # with open("T_c_100k_filter_CDH.clstr", "r") as fcd:
+    with open("T_c_1000_filter_CDH_80%.clstr", "r") as fcd:
         lines = fcd.readlines()
 
     clusters = {}
@@ -17,7 +16,7 @@ def read_clstr():
     clstr_id = None
     for line in lines:
         if line[0] == ">":
-            if len(read_list) > 1:
+            if len(read_list) > 0:
                 clusters[clstr_id] = read_list
             read_list = []
             clstr_id = line.strip()[1:] 
@@ -48,8 +47,11 @@ def run_dbg_for_cluster(all_dict: dict):
         for i, c in enumerate(clstr_dict):
             reads = clstr_dict[c]
             print(f'Cluster {i+1} / {no_clusters}')
-            contigs, v, e, k  = test_kmer(5, 40, reads)
-            visualize_debruijn(v, e, False, f'cluster{i}', 'cluster_dbg')
+            if (len(reads) == 1):
+                contigs = reads[0]
+            else:
+                contigs, v, e, k  = test_kmer(10, 40, reads)
+                # visualize_debruijn(v, e, False, f'cluster{i}', 'cluster_dbg')
             file.write(f">Final_contigs_cluster_{i} Lenght={len(contigs)}\n") 
             file.write(contigs + "\n")
             print()

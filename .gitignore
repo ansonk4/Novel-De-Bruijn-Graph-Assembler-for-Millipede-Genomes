@@ -1,5 +1,3 @@
 .DS_Store
-
-*.fasta
-*.clstr
 dbg_output/
+__pycache__/

@@ -126,10 +126,11 @@ def read_fasta(file_name: str, num_seq: int):
     return reads
 
 if __name__ == '__main__':
-    file = input("Input file name (e.g. file.fasta): ")
+    file = input("Input file name (e.g. T_c_100k.fasta): ")
     kmin = int(input("Input min kmer (e.g: 10): "))
-    kmax = int(input("Input max kmer (e.g. 70): "))
-    reads = read_fasta(file, 100)
+    kmax = int(input("Input max kmer (e.g. 40): "))
+    seqNum = int(input("Input the number of genome to read (e.g. 1000): "))
+    reads = read_fasta(file, seqNum)
     contigs, vertices, edges, bestK = test_kmer(kmin, kmax, reads)
     visualize_debruijn(vertices, edges, True)
     with open('dbg_output/result.txt', "w+") as file:

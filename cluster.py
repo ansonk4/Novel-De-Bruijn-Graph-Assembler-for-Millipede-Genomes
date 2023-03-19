@@ -7,8 +7,8 @@ import time
     2. each cluster do DBG,
     3. output fasta for all contigs'''
 
-def read_clstr():
-    with open("T_c_1000_filter_CDH_80%.clstr", "r") as fcd:
+def read_clstr(clstr: str):
+    with open(clstr, "r") as fcd:
         lines = fcd.readlines()
 
     clusters = {}
@@ -28,8 +28,8 @@ def read_clstr():
     return clusters 
         
 
-def run_dbg_for_cluster(all_dict: dict):
-    fasta_file = "T_c_100k.fasta"
+def run_dbg_for_cluster(all_dict: dict, fasta: str):
+    fasta_file = fasta
     index = SeqIO.index(fasta_file, "fasta")
 
     clstr_dict = {}
@@ -43,7 +43,7 @@ def run_dbg_for_cluster(all_dict: dict):
         clstr_dict[i] = seq_list
 
     no_clusters = len(clstr_dict)
-    with open(f"sequences_all_contigs_.fasta", "w") as file: 
+    with open(f"clustred_fasta.fasta", "w") as file: 
         for i, c in enumerate(clstr_dict):
             reads = clstr_dict[c]
             print(f'Cluster {i+1} / {no_clusters}')
@@ -57,7 +57,9 @@ def run_dbg_for_cluster(all_dict: dict):
             print()
 
 if __name__ == '__main__':
+    clstr_file = input("Input the clstr file (e.g. T_c_1000_filter_CDH_80%.clstr): ")
+    fasta_file = input("Input the fasta file (e.g. T_c_100k.fasta): ")
     start = time.time()
-    clusters = read_clstr()
-    run_dbg_for_cluster(clusters)
+    clusters = read_clstr(clstr_file)
+    run_dbg_for_cluster(clusters, fasta_file)
     print(f'Time Taken: {time.time() - start}s')

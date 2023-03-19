@@ -18,13 +18,53 @@ cd dbg
 python dbg.py
 ```
 
-4. Input the target fasta file name, for example:
+4. Input the info, for example:
 
 ```
-Input file name (e.g. file.fasta): T_c_100k.fasta
-Input min kmer (e.g: 10): 20
-Input max kmer (e.g. 70): 40
+Input file name (e.g. T_c_100k.fasta): T_c_100k.fasta
+Input min kmer (e.g: 10): 10
+Input max kmer (e.g. 40): 40
+Input the number of genome to read (e.g. 1000): 1000
 ```
 
-5.  The resultant genome info and dbg is stored in `dbg_output`
+5.  The resultant genome and dbg is stored in `dbg_output/`
 
+## DBG with clustering
+1. Follow the instruction here to obtain the `*.clstr` file
+
+2. Clone this repository
+
+```
+git clone https://github.com/ansonk4/DBG.git
+```
+
+3. Run cluster.py to generate `clustred_fasta.fasta`
+
+```
+cd dbg
+python cluster.py
+```
+
+4. Input the info, for example:
+
+```
+Input the clstr file (e.g. T_c_1000_filter_CDH_80%.clstr): T_c_1000_filter_CDH_80%.clstr
+Input the fasta file (e.g. T_c_100k.fasta): T_c_100k.fasta  
+```
+
+5. Use `clustred_fasta.fasta` as the input to run dbg.py
+
+```
+python cluster.py
+```
+
+6. Input the info, for example:
+
+```
+Input file name (e.g. T_c_100k.fasta): clustred_fasta.fasta
+Input min kmer (e.g: 10): 10
+Input max kmer (e.g. 40): 40
+Input the number of genome to read (e.g. 1000): 1000
+```
+
+7. The resultant genome and dbg is stored in `dbg_output/`

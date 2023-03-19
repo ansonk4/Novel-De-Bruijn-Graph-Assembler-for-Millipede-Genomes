@@ -105,7 +105,7 @@ def visualize_debruijn(Veritces, Edges, view: bool, file_name = 'DBG', dir = 'db
     dot.render(directory=dir, view=view)  
     return dot
 
-def read_fasta(file_name: str):
+def read_fasta(file_name: str, num_seq: int):
     print(f'Reading {file_name}')
     reads = []
     with open(file_name, encoding='utf-8') as file:
@@ -118,7 +118,7 @@ def read_fasta(file_name: str):
                 reads.append(seq)
                 i += 1
                 seq = ""
-                if i > 100:
+                if i > num_seq:
                     break
     
     reads.pop(0)
@@ -129,6 +129,11 @@ if __name__ == '__main__':
     file = input("Input file name (e.g. file.fasta): ")
     kmin = int(input("Input min kmer (e.g: 10): "))
     kmax = int(input("Input max kmer (e.g. 70): "))
-    reads = read_fasta(file)
+    reads = read_fasta(file, 100)
     contigs, vertices, edges, bestK = test_kmer(kmin, kmax, reads)
     visualize_debruijn(vertices, edges, True)
+    with open('dbg_output/result.txt', "w+") as file:
+        file.write(f'Best k_mer size: {bestK}\n')
+        file.write(f'Length of the resultance sequence: {len(contigs)}s\n')
+        file.write(f'Sequence: {contigs}')
+

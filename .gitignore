@@ -2,4 +2,4 @@
 
 *.fasta
 *.clstr
-dbg-output/
+dbg_output/

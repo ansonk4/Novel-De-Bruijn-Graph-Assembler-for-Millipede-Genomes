@@ -6,7 +6,7 @@ This repository is developed for [Novel De Bruijn Graph Assembler for Millipede 
 1. Clone this repository
 
 ```
-git clone https://github.com/ansonk4/DBG.git
+git clone https://github.com/ansonk4/Novel-De-Bruijn-Graph-Assembler-for-Millipede-Genomes.git
 ```
 
 2. Put the target fasta file to the cloned repository
@@ -37,7 +37,7 @@ The above input means the program performs genome assembly on the first 1000 gen
 2. Clone this repository
 
 ```
-git clone https://github.com/ansonk4/DBG.git
+git clone https://github.com/ansonk4/Novel-De-Bruijn-Graph-Assembler-for-Millipede-Genomes.git
 ```
 
 3. Run cluster.py to generate `clustred_fasta.fasta`

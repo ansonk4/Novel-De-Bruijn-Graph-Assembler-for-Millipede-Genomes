@@ -14,7 +14,7 @@ git clone https://github.com/ansonk4/Novel-De-Bruijn-Graph-Assembler-for-Millipe
 3. Run dbg.py 
 
 ```
-cd dbg
+cd Novel-De-Bruijn-Graph-Assembler-for-Millipede-Genomes
 python dbg.py
 ```
 
@@ -43,7 +43,7 @@ git clone https://github.com/ansonk4/Novel-De-Bruijn-Graph-Assembler-for-Millipe
 3. Run cluster.py to generate `clustred_fasta.fasta`
 
 ```
-cd dbg
+cd Novel-De-Bruijn-Graph-Assembler-for-Millipede-Genomes
 python cluster.py
 ```
 
